@@ -1,0 +1,33 @@
+{
+  "name": "@resting/rnasr",
+  "version": "1.0.0",
+  "description": "A helper for building `react-native` `apk` and rename the release accordingly.",
+  "main": "index.js",
+  "bin": {
+    "rnasr": "index.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react native",
+    "android",
+    "assembleRelease"
+  ],
+  "author": {
+    "name": "resting",
+    "email": "roy.wong.80@gmail.com"
+  },
+  "homepage": "https://github.com/resting/rnasr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/resting/rnasr"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^25.2.7"
+  },
+  "dependencies": {
+    "meow": "^6.1.0"
+  }
+}
