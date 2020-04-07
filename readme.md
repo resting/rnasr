@@ -17,7 +17,7 @@ Adds the `applicationId` and `versionCode ` declared in `app/build.gradle` to th
 
 ### Install globally
 ```bash
-$ npm install -g rnasr
+$ npm install -g @resting/rnasr
 ```
 Or see [without install](#without-install)
 
@@ -28,6 +28,6 @@ $ projectfolder > rnasr
 
 ### Without install
 ```bash
-$ projectfolder > npx rnasr
+$ projectfolder > npx @resting/rnasr
 ```
 
