@@ -29,8 +29,8 @@ const rl = readline.createInterface({
 
 extractBuildGradle({
   rl,
-  onSuccess: ({appId, appVer}) => {
-    console.log('Building release...')
+  onSuccess: ({appId, appVer, appBuild}) => {
+    console.log(`Building app-release-${appId}-${appVer}-b${appBuild}.apk...`)
     let cmd = 'cd android && ./gradlew assembleRelease && open app/build/outputs/apk/release'
 
     cmd = cli.flags.overwrite !== '' ? `cd android && ${cli.flags.overwrite} && open app/build/outputs/apk/release` : cmd
@@ -45,7 +45,7 @@ extractBuildGradle({
         return
       }
       console.log(stdout)
-      fs.renameSync('./android/app/build/outputs/apk/release/app-release.apk', `./android/app/build/outputs/apk/release/app-release-${appId}-${appVer}.apk`)
+      fs.renameSync('./android/app/build/outputs/apk/release/app-release.apk', `./android/app/build/outputs/apk/release/app-release-${appId}-${appVer}-b${appBuild}.apk`)
       exec('open ./android/app/build/outputs/apk/release')
     })
   },
