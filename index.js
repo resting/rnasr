@@ -11,10 +11,16 @@ const usage = `
     $ projectfolder > rnasr
 
   Options
-  --overwrite, -o      Eg: rnasr -o './gradlew assembleRelease'
+  --version,    -v      Output current version
+  --overwrite,  -o      Eg: rnasr -o './gradlew assembleRelease'
 `
 const cli = meow(usage, {
   flags: {
+    version: {
+      type: 'boolean',
+      default: false,
+      alias: 'v'
+    },
     overwrite: {
       type: 'string',
       default: '',
