@@ -37,11 +37,11 @@ extractBuildGradle({
   rl,
   onSuccess: ({appId, appVer, appBuild}) => {
     console.log(`Building app-release-${appId}-${appVer}-b${appBuild}.apk...`)
-    let cmd = 'cd android && ./gradlew assembleRelease && open app/build/outputs/apk/release'
+    let cmd = 'cd android && ./gradlew assembleRelease'
 
-    cmd = cli.flags.overwrite !== '' ? `cd android && ${cli.flags.overwrite} && open app/build/outputs/apk/release` : cmd
+    cmd = cli.flags.overwrite !== '' ? `cd android && ${cli.flags.overwrite}` : cmd
     console.log(cmd)
-    exec(cmd, (err, stdout, stderr) => {
+    exec(cmd, null, (err, stdout, stderr) => {
       if (err) {
         console.log(err)
         return
@@ -51,8 +51,12 @@ extractBuildGradle({
         return
       }
       console.log(stdout)
-      fs.renameSync('./android/app/build/outputs/apk/release/app-release.apk', `./android/app/build/outputs/apk/release/app-release-${appId}-${appVer}-b${appBuild}.apk`)
-      exec('open ./android/app/build/outputs/apk/release')
+      try {
+        fs.renameSync('./android/app/build/outputs/apk/release/app-release.apk', `./android/app/build/outputs/apk/release/app-release-${appId}-${appVer}-b${appBuild}.apk`)
+        exec('open ./android/app/build/outputs/apk/release')
+      } catch (e) {
+        console.log(e)
+      }
     })
   },
   onFail: () => {
