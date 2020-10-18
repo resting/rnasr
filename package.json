@@ -1,7 +1,7 @@
 {
   "name": "@resting/rnasr",
-  "version": "1.1.2",
-  "description": "A helper for building `react-native` `apk` and rename the release accordingly.",
+  "version": "1.2.0",
+  "description": "A helper for building `react-native` `apk`, `aab` and rename the release accordingly.",
   "main": "index.js",
   "bin": {
     "rnasr": "index.js"
@@ -12,7 +12,8 @@
   "keywords": [
     "react native",
     "android",
-    "assembleRelease"
+    "assembleRelease",
+    "bundleRelease"
   ],
   "author": {
     "name": "resting",
@@ -28,6 +29,7 @@
     "jest": "^25.2.7"
   },
   "dependencies": {
+    "date-fns": "^2.16.1",
     "meow": "^6.1.0"
   }
 }

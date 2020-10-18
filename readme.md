@@ -4,6 +4,10 @@ A helper for building `react-native` `apk` and rename the release accordingly.
 
 ### What it does
 Adds the `applicationId`, `versionName` and `versionCode ` declared in `app/build.gradle` to the built `apk`.
+With version 1.2.0, 
+- datetime is also added to filename.
+- `bundleRelease` is now the default. `app:assembleRelease` can is now under `-o` flag.
+
 
 ### Features
 - Does `./gradlew assembleRelease` in project folder.
