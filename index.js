@@ -99,6 +99,6 @@ extractBuildGradle({
   },
   onFail: () => {
     console.log("Failed");
-    // cli.showHelp();
+    cli.showHelp();
   }
 });
