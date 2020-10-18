@@ -1,6 +1,6 @@
 {
   "name": "@resting/rnasr",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A helper for building `react-native` `apk`, `aab` and rename the release accordingly.",
   "main": "index.js",
   "bin": {
