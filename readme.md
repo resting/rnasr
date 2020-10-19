@@ -1,6 +1,6 @@
 # React native assembleRelease 
 
-A helper for building `react-native` `apk` and rename the release accordingly.
+A helper for building `react-native` `aab`, `apk` and rename the release accordingly.
 
 ### What it does
 Adds the `applicationId`, `versionName` and `versionCode ` declared in `app/build.gradle` to the built `apk`.
@@ -16,7 +16,7 @@ With version 1.2.0,
 
 #### Example of `apk` filename
 ```bash
-./android/app/build/outputs/apk/release/app-release-${appId}-${appVer}-b${appBuild}.apk
+./android/app/build/outputs/apk/release/app-release-${appId}-${appVer}-b${appBuild}-${_datetime}.apk
 ```
 
 ### Install globally

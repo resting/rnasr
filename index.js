@@ -78,7 +78,7 @@ extractBuildGradle({
         try {
           fs.renameSync(
             "./android/app/build/outputs/apk/release/app-release.apk",
-            `./android/app/build/outputs/apk/release/app-release-${appId}-${appVer}-b${appBuild}.apk`
+            `./android/app/build/outputs/apk/release/app-release-${appId}-${appVer}-b${appBuild}-${_datetime}.apk`
           );
           exec("open ./android/app/build/outputs/apk/release");
         } catch (e) {
@@ -88,7 +88,7 @@ extractBuildGradle({
         try {
           fs.renameSync(
             "./android/app/build/outputs/bundle/release/app-release.aab",
-            `./android/app/build/outputs/bundle/release/app-release-${appId}-${appVer}-b${appBuild}.aab`
+            `./android/app/build/outputs/bundle/release/app-release-${appId}-${appVer}-b${appBuild}-${_datetime}.aab`
           );
           exec("open ./android/app/build/outputs/bundle/release");
         } catch (e) {
